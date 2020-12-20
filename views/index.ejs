@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        
+        <div class="container">
+            <h2>Twitter</h2>
+
+            <form action="/tweets" method="post">
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Search by hashtag like #india" name="search">
+                  <div class="input-group-btn">
+                    <button class="btn btn-success" type="submit">Search</button>
+                  </div>
+                </div>
+            </form>
+
+            <br>
+
+            <% for (var i = 0; i < data.length; i++)  { %>
+            <div class="card">
+              <div class="card-body"><h5 style="color: blue;"><%= data[i].user.name %></h5><p><%= data[i].text %></p></div>         
+            </div> <br>
+            <% } %>
+
+        </div>
+          
+    </body>
+</html>
